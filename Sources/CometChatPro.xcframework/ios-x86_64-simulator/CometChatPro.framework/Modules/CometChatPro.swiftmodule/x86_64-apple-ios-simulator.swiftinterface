@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CometChatPro
 import AVKit
 @_exported import CometChatPro
@@ -13,8 +13,8 @@ import UIKit
   @objc public enum ReceiptType : Swift.Int {
     case delivered
     case read
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -29,8 +29,8 @@ import UIKit
   @objc public var readAt: Swift.Double
   @objc public init(messageId: Swift.String, sender: CometChatPro.User, receiverId: Swift.String, receiverType: CometChatPro.CometChat.ReceiverType, receiptType: CometChatPro.MessageReceipt.ReceiptType, timeStamp: Swift.Int)
   @objc public func stringValue() -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class Attachment : ObjectiveC.NSObject {
   @objc public var fileName: Swift.String {
@@ -48,8 +48,8 @@ import UIKit
   @objc public var fileUrl: Swift.String {
     @objc get
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AppEntity : ObjectiveC.NSObject {
   @objc override dynamic public init()
@@ -64,8 +64,8 @@ extension CometChat {
     public var value: Swift.String {
       get
     }
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -83,8 +83,8 @@ extension CometChat {
     @objc public func build() -> CometChatPro.BlockedUserRequest
     @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class TransientMessage : ObjectiveC.NSObject {
   @objc public var receiverID: Swift.String
@@ -93,8 +93,8 @@ extension CometChat {
   @objc public var sender: CometChatPro.User?
   @objc public init(receiverID: Swift.String, receiverType: CometChatPro.CometChat.ReceiverType, data: [Swift.String : Any])
   @objc public func stringValue() -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension CometChat {
   @objc public static func markAsRead(baseMessage: CometChatPro.BaseMessage)
@@ -108,11 +108,11 @@ public enum HTTPMethod : Swift.String {
   case put
   case delete
   case patch
+  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
-  public init?(rawValue: Swift.String)
 }
 extension CometChat {
   @objc public enum callStatus : Swift.Int {
@@ -123,8 +123,8 @@ extension CometChat {
     case busy
     case cancelled
     case ended
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -141,8 +141,8 @@ extension CometChat {
   }
   @objc public init(UID: Swift.String, groupMemberScope: CometChatPro.CometChat.GroupMemberScopeType)
   @objc override public func stringValue() -> Swift.String
-  @objc deinit
   @objc override public init(uid: Swift.String, name: Swift.String)
+  @objc deinit
 }
 extension CometChat {
   @objc public static func login(UID: Swift.String, apiKey: Swift.String, onSuccess: @escaping (CometChatPro.User) -> Swift.Void, onError: @escaping (CometChatPro.CometChatException) -> Swift.Void)
@@ -169,8 +169,8 @@ extension CometChat {
     case user
     case group
     case none
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -181,8 +181,8 @@ extension CometChat {
     case admin
     case moderator
     case participant
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -209,8 +209,8 @@ extension CometChat {
     @objc public func build() -> CometChatPro.UsersRequest
     @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class Call : CometChatPro.BaseMessage {
   @objc public var sessionID: Swift.String? {
@@ -252,8 +252,8 @@ extension CometChat {
   @objc public init(receiverId: Swift.String, callType: CometChatPro.CometChat.CallType, receiverType: CometChatPro.CometChat.ReceiverType)
   public static func callMessage(fromJSON message: [Swift.String : Any]?) -> (CometChatPro.BaseMessage?, CometChatPro.CometChatException?)
   @objc public func stringValue() -> Swift.String
-  @objc deinit
   @objc override public init(receiverUid: Swift.String, messageType: CometChatPro.CometChat.MessageType, receiverType: CometChatPro.CometChat.ReceiverType)
+  @objc deinit
 }
 extension CometChat {
   public static func processMessage(_ message: [Swift.String : Any]) -> (CometChatPro.BaseMessage?, CometChatPro.CometChatException?)
@@ -312,8 +312,8 @@ extension CometChat {
   @objc public enum CallFlowMode : Swift.Int {
     case DEFAULT
     case DIRECT
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -345,11 +345,11 @@ extension CometChat {
     @objc public func withTags(_ withTags: Swift.Bool) -> CometChatPro.GroupsRequest.GroupsRequestBuilder
     @objc public func set(tags: [Swift.String]) -> CometChatPro.GroupsRequest.GroupsRequestBuilder
     @objc public func build() -> CometChatPro.GroupsRequest
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class MediaMessage : CometChatPro.BaseMessage {
   @objc public var caption: Swift.String? {
@@ -374,8 +374,8 @@ extension CometChat {
   @objc public enum CallType : Swift.Int {
     case audio
     case video
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -496,11 +496,11 @@ extension CometChat {
     @objc public func set(limit: Swift.Int) -> CometChatPro.GroupMembersRequest.GroupMembersRequestBuilder
     @objc public func set(scopes: [Swift.String]) -> CometChatPro.GroupMembersRequest.GroupMembersRequestBuilder
     @objc public func build() -> CometChatPro.GroupMembersRequest
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension CometChat {
   @objc public enum FeatureType : Swift.Int {
@@ -576,8 +576,8 @@ extension CometChat {
     case features_notifications_push_notification_enabled
     case features_notifications_email_notification_enabled
     case features_moderation_inflight_message_moderation_enabled
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -702,8 +702,8 @@ extension BaseMessage {
     case call
     case customMessage
     case none
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -802,8 +802,8 @@ extension CometChat {
     case offline
     @available(iOS, deprecated: 2.0.12, message: "This variable is deprecated now. Please use `online` instead")
     case available
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -818,11 +818,11 @@ extension CometChat {
     @objc public func set(limit: Swift.Int) -> CometChatPro.ConversationRequest.ConversationRequestBuilder
     @objc public func setConversationType(conversationType: CometChatPro.CometChat.ConversationType) -> CometChatPro.ConversationRequest.ConversationRequestBuilder
     @objc public func build() -> CometChatPro.ConversationRequest
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class AppSettings : ObjectiveC.NSObject {
   @objc public init(builder: CometChatPro.AppSettings.AppSettingsBuilder)
@@ -836,8 +836,8 @@ extension CometChat {
     @objc public func build() -> CometChatPro.AppSettings
     @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Group : CometChatPro.AppEntity {
   @objc public var guid: Swift.String {
@@ -924,8 +924,8 @@ extension CometChat {
     case admin
     case moderator
     case participant
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -945,8 +945,8 @@ extension CometChat {
     case group
     case groupMember
     case message
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -961,8 +961,8 @@ extension CometChat {
     case messageEdited
     case messageDeleted
     case added
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -990,11 +990,11 @@ extension CometChat {
     @objc public func setRegion(region: Swift.String) -> CometChatPro.CallSettings.CallSettingsBuilder
     @objc public func setMode(mode: CometChatPro.CometChat.CallMode) -> CometChatPro.CallSettings.CallSettingsBuilder
     @objc public func build() -> CometChatPro.CallSettings
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension CometChat {
   @objc public enum SubscriptionType : Swift.Int {
@@ -1002,8 +1002,8 @@ extension CometChat {
     case onlyFriends
     case role
     case none
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1015,8 +1015,8 @@ extension CometChat {
     case action
     case call
     case custom
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1027,8 +1027,8 @@ extension CometChat {
     case Default
     case LimitedTransient
     case NoTransient
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1077,8 +1077,8 @@ extension CometChat {
     case file
     case custom
     case groupMember
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1089,8 +1089,8 @@ extension CometChat {
     case MODE_SPOTLIGHT
     case MODE_SINGLE
     case MODE_DEFAULT
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1110,8 +1110,8 @@ extension CometChat {
   @objc public enum ReceiverType : Swift.Int {
     case user
     case group
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1119,8 +1119,8 @@ extension CometChat {
   @objc public enum XMPPMsgType : Swift.Int {
     case chat
     case groupChat
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1148,8 +1148,8 @@ extension CometChat {
   @objc public init(receiverUid: Swift.String, receiverType: CometChatPro.CometChat.ReceiverType, customData: [Swift.String : Any], type: Swift.String?)
   public static func customMessage(fromJSON message: [Swift.String : Any]) -> (CometChatPro.BaseMessage?, CometChatPro.CometChatException?)
   @objc public func stringValue() -> Swift.String
-  @objc deinit
   @objc override public init(receiverUid: Swift.String, messageType: CometChatPro.CometChat.MessageType, receiverType: CometChatPro.CometChat.ReceiverType)
+  @objc deinit
 }
 extension CometChat {
   @objc public static func kickGroupMember(UID: Swift.String, GUID: Swift.String, onSuccess: @escaping (Swift.String) -> Swift.Void, onError: @escaping (CometChatPro.CometChatException?) -> Swift.Void)
@@ -1185,16 +1185,16 @@ extension CometChat {
     @objc public func build() -> CometChatPro.MessagesRequest
     @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension CometChat {
   @objc public enum Blocked : Swift.Int {
     case byMe
     case me
     case both
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1218,8 +1218,8 @@ extension CometChat {
     public var value: Swift.String {
       get
     }
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1233,8 +1233,8 @@ extension CometChat {
     case `public`
     case `private`
     case password
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1249,11 +1249,11 @@ extension CometChat {
     @objc public func set(limit: Swift.Int) -> CometChatPro.BannedGroupMembersRequest.BannedGroupMembersRequestBuilder
     @objc public func set(searchKeyword: Swift.String) -> CometChatPro.BannedGroupMembersRequest.BannedGroupMembersRequestBuilder
     @objc public func build() -> CometChatPro.BannedGroupMembersRequest
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension CometChatPro.MessageReceipt.ReceiptType : Swift.Equatable {}
 extension CometChatPro.MessageReceipt.ReceiptType : Swift.Hashable {}
