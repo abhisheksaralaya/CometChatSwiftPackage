@@ -25,7 +25,7 @@ let package = Package(
             
         ),
         .binaryTarget(name: "Starscream",
-                      url: "https://library.cometchat.io/ios/v2.0/xcode12/Starscream.xcframework_1.zip",
+                      url: "https://library.cometchat.io/ios/v2.0/xcode12/Starscream.xcframework_2.zip",
                       checksum: "b0e9a80270f0e03d824e168620f0bd4c4f2aebd9050aa5c3ff724ceb86b950ba")
     ]
 )
