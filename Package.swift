@@ -23,14 +23,15 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(name: "CometChat"),
         .binaryTarget(name: "CometChatPro", path: "Sources/CometChatPro.xcframework"),
+        .binaryTarget(name: "Starscream", path: "Sources/Starscream.xcframework")
 //        .binaryTarget(
 //            name: "CometChatPro",
 //            url: "https://library.cometchat.io/ios/v2.0/xcode12/CometChatPro.xcframework_1.zip",
 //            checksum: "0169d1cebbb98f5170016d4034f5b85f656f3efc7779ea476f6caa103398304d"
-//            
+//
 //        ),
-        .binaryTarget(name: "Starscream",
-                      url: "https://library.cometchat.io/ios/v2.0/xcode12/Starscream.xcframework_2.zip",
-                      checksum: "b0e9a80270f0e03d824e168620f0bd4c4f2aebd9050aa5c3ff724ceb86b950ba")
+//        .binaryTarget(name: "Starscream",
+//                      url: "https://library.cometchat.io/ios/v2.0/xcode12/Starscream.xcframework_2.zip",
+//                      checksum: "b0e9a80270f0e03d824e168620f0bd4c4f2aebd9050aa5c3ff724ceb86b950ba")
     ]
 )
