@@ -23,7 +23,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(name: "CometChat"),
         .binaryTarget(name: "CometChatPro", path: "./Sources/CometChatPro.xcframework"),
-        .binaryTarget(name: "Starscream", path: "./Sources/Starscream.xcframework")
+//        .binaryTarget(name: "Starscream", path: "./Sources/Starscream.xcframework")
 //        .binaryTarget(
 //            name: "CometChatPro",
 //            url: "https://library.cometchat.io/ios/v2.0/xcode12/CometChatPro.xcframework_1.zip", type: .dynamic,
