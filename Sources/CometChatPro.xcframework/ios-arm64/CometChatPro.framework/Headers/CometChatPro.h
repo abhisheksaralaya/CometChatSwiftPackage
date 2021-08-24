@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char CometChatSDKVersionString[];
 //#import <CometChatPro/XMPPFramework.h>
 //#import <CometChatPro/FMDB.h>
 #if __has_include("CallingEvents.h")
+#import "RTCVideoController.h"
 #import "CallingEvents.h"
 #import "CometChatRTCView.h"
 #endif

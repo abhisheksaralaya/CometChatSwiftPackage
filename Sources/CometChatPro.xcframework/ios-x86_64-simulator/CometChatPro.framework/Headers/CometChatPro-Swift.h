@@ -713,15 +713,15 @@ typedef SWIFT_ENUM(NSInteger, MessageCategory, open) {
   MessageCategoryCustom = 3,
 };
 
-
-@interface CometChat (SWIFT_EXTENSION(CometChatPro))
-+ (void)isFeatureEnabledWithFeature:(NSString * _Nonnull)feature onSuccess:(void (^ _Nonnull)(BOOL))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-@end
-
 @class TransientMessage;
 
 @interface CometChat (SWIFT_EXTENSION(CometChatPro))
 + (void)sendTransientMessageWithMessage:(TransientMessage * _Nonnull)message;
+@end
+
+
+@interface CometChat (SWIFT_EXTENSION(CometChatPro))
++ (void)isFeatureEnabledWithFeature:(NSString * _Nonnull)feature onSuccess:(void (^ _Nonnull)(BOOL))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
 @end
 
 
@@ -787,24 +787,15 @@ typedef SWIFT_ENUM(NSInteger, XMPPMsgType, open) {
 
 
 @interface CometChat (SWIFT_EXTENSION(CometChatPro))
-+ (void)markAsReadWithBaseMessage:(BaseMessage * _Nonnull)baseMessage;
-+ (void)markAsReadWithMessageId:(NSInteger)messageId receiverId:(NSString * _Nonnull)receiverId receiverType:(enum ReceiverType)receiverType messageSender:(NSString * _Nonnull)messageSender;
-+ (void)markAsDeliveredWithBaseMessage:(BaseMessage * _Nonnull)baseMessage;
-+ (void)markAsDeliveredWithMessageId:(NSInteger)messageId receiverId:(NSString * _Nonnull)receiverId receiverType:(enum ReceiverType)receiverType messageSender:(NSString * _Nonnull)messageSender;
-@end
-
-
-@interface CometChat (SWIFT_EXTENSION(CometChatPro))
 + (void)processMessage:(NSDictionary<NSString *, id> * _Nonnull)message onSuccess:(void (^ _Nonnull)(BaseMessage * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nonnull))onError;
 @end
 
 
 @interface CometChat (SWIFT_EXTENSION(CometChatPro))
-+ (void)createUserWithUser:(User * _Nonnull)user apiKey:(NSString * _Nonnull)apiKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)createUserWithUser:(User * _Nonnull)user authKey:(NSString * _Nonnull)authKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)updateUserWithUser:(User * _Nonnull)user apiKey:(NSString * _Nonnull)apiKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)updateUserWithUser:(User * _Nonnull)user authKey:(NSString * _Nonnull)authKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)updateCurrentUserDetailsWithUser:(User * _Nonnull)user onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)markAsReadWithBaseMessage:(BaseMessage * _Nonnull)baseMessage;
++ (void)markAsReadWithMessageId:(NSInteger)messageId receiverId:(NSString * _Nonnull)receiverId receiverType:(enum ReceiverType)receiverType messageSender:(NSString * _Nonnull)messageSender;
++ (void)markAsDeliveredWithBaseMessage:(BaseMessage * _Nonnull)baseMessage;
++ (void)markAsDeliveredWithMessageId:(NSInteger)messageId receiverId:(NSString * _Nonnull)receiverId receiverType:(enum ReceiverType)receiverType messageSender:(NSString * _Nonnull)messageSender;
 @end
 
 @class TextMessage;
@@ -819,10 +810,31 @@ typedef SWIFT_ENUM(NSInteger, XMPPMsgType, open) {
 
 
 @interface CometChat (SWIFT_EXTENSION(CometChatPro))
++ (void)createUserWithUser:(User * _Nonnull)user apiKey:(NSString * _Nonnull)apiKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)createUserWithUser:(User * _Nonnull)user authKey:(NSString * _Nonnull)authKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)updateUserWithUser:(User * _Nonnull)user apiKey:(NSString * _Nonnull)apiKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)updateUserWithUser:(User * _Nonnull)user authKey:(NSString * _Nonnull)authKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)updateCurrentUserDetailsWithUser:(User * _Nonnull)user onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
+@end
+
+
+@interface CometChat (SWIFT_EXTENSION(CometChatPro))
 + (void)loginWithUID:(NSString * _Nonnull)UID apiKey:(NSString * _Nonnull)apiKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nonnull))onError;
 + (void)loginWithUID:(NSString * _Nonnull)UID authKey:(NSString * _Nonnull)authKey onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nonnull))onError;
 + (void)loginWithAuthToken:(NSString * _Nonnull)authToken onSuccess:(void (^ _Nonnull)(User * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nonnull))onError;
 + (void)logoutOnSuccess:(void (^ _Nonnull)(NSString * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nonnull))onError;
+@end
+
+
+@interface CometChat (SWIFT_EXTENSION(CometChatPro))
++ (void)initiateCallWithCall:(Call * _Nonnull)call onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)acceptCallWithSessionID:(NSString * _Nonnull)sessionID onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)rejectCallWithSessionID:(NSString * _Nonnull)sessionID status:(enum callStatus)status onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)endCallWithSessionID:(NSString * _Nonnull)sessionID onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
++ (void)startCallWithSessionID:(NSString * _Nonnull)sessionID inView:(UIView * _Nonnull)inView onUserJoined:(void (^ _Nonnull)(User * _Nullable))onUserJoined onUserLeft:(void (^ _Nonnull)(User * _Nullable))onUserLeft onUserListUpdated:(void (^ _Nonnull)(NSArray<User *> * _Nullable))onUserListUpdated onAudioModesUpdated:(void (^ _Nonnull)(NSArray<AudioDevice *> * _Nullable))onAudioModesUpdated onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError onCallEnded:(void (^ _Nonnull)(Call * _Nullable))onCallEnded;
++ (void)startCallWithCallSettings:(CallSettings * _Nonnull)callSettings onUserJoined:(void (^ _Nonnull)(User * _Nullable))onUserJoined onUserLeft:(void (^ _Nonnull)(User * _Nullable))onUserLeft onUserListUpdated:(void (^ _Nonnull)(NSArray<User *> * _Nullable))onUserListUpdated onAudioModesUpdated:(void (^ _Nonnull)(NSArray<AudioDevice *> * _Nullable))onAudioModesUpdated onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError onCallEnded:(void (^ _Nonnull)(Call * _Nullable))onCallEnded;
++ (Call * _Nullable)getActiveCall SWIFT_WARN_UNUSED_RESULT;
++ (void)getCallParticipantCountWithSessionId:(NSString * _Nonnull)sessionId type:(enum CallFlowMode)type onSuccess:(void (^ _Nonnull)(NSInteger))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
 @end
 
 @class Group;
@@ -836,18 +848,6 @@ typedef SWIFT_ENUM(NSInteger, XMPPMsgType, open) {
 + (void)leaveGroupWithGUID:(NSString * _Nonnull)GUID onSuccess:(void (^ _Nonnull)(NSString * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
 + (void)getJoinedGroupsOnSuccess:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
 + (void)transferGroupOwnershipWithUID:(NSString * _Nonnull)UID GUID:(NSString * _Nonnull)GUID onSuccess:(void (^ _Nonnull)(NSString * _Nonnull))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-@end
-
-
-@interface CometChat (SWIFT_EXTENSION(CometChatPro))
-+ (void)initiateCallWithCall:(Call * _Nonnull)call onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)acceptCallWithSessionID:(NSString * _Nonnull)sessionID onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)rejectCallWithSessionID:(NSString * _Nonnull)sessionID status:(enum callStatus)status onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)endCallWithSessionID:(NSString * _Nonnull)sessionID onSuccess:(void (^ _Nonnull)(Call * _Nullable))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
-+ (void)startCallWithSessionID:(NSString * _Nonnull)sessionID inView:(UIView * _Nonnull)inView onUserJoined:(void (^ _Nonnull)(User * _Nullable))onUserJoined onUserLeft:(void (^ _Nonnull)(User * _Nullable))onUserLeft onUserListUpdated:(void (^ _Nonnull)(NSArray<User *> * _Nullable))onUserListUpdated onAudioModesUpdated:(void (^ _Nonnull)(NSArray<AudioDevice *> * _Nullable))onAudioModesUpdated onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError onCallEnded:(void (^ _Nonnull)(Call * _Nullable))onCallEnded;
-+ (void)startCallWithCallSettings:(CallSettings * _Nonnull)callSettings onUserJoined:(void (^ _Nonnull)(User * _Nullable))onUserJoined onUserLeft:(void (^ _Nonnull)(User * _Nullable))onUserLeft onUserListUpdated:(void (^ _Nonnull)(NSArray<User *> * _Nullable))onUserListUpdated onAudioModesUpdated:(void (^ _Nonnull)(NSArray<AudioDevice *> * _Nullable))onAudioModesUpdated onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError onCallEnded:(void (^ _Nonnull)(Call * _Nullable))onCallEnded;
-+ (Call * _Nullable)getActiveCall SWIFT_WARN_UNUSED_RESULT;
-+ (void)getCallParticipantCountWithSessionId:(NSString * _Nonnull)sessionId type:(enum CallFlowMode)type onSuccess:(void (^ _Nonnull)(NSInteger))onSuccess onError:(void (^ _Nonnull)(CometChatException * _Nullable))onError;
 @end
 
 @protocol CometChatMessageDelegate;
@@ -1030,7 +1030,7 @@ SWIFT_PROTOCOL("_TtP12CometChatPro24CometChatMessageDelegate_")
 - (void)onCustomMessageReceivedWithCustomMessage:(CustomMessage * _Nonnull)customMessage;
 - (void)onTypingStarted:(TypingIndicator * _Nonnull)typingDetails;
 - (void)onTypingEnded:(TypingIndicator * _Nonnull)typingDetails;
-- (void)onTransisentMessage:(TransientMessage * _Nonnull)message;
+- (void)onTransisentMessageReceived:(TransientMessage * _Nonnull)message;
 - (void)onMessageDeliveredWithReceipt:(MessageReceipt * _Nonnull)receipt SWIFT_AVAILABILITY(ios,unavailable,message="This delegate method is unavailable now. Please use new delegate function `onMessagesDelivered(receipt : MessageReceipt)`");
 - (void)onMessageReadWithReceipt:(MessageReceipt * _Nonnull)receipt SWIFT_AVAILABILITY(ios,unavailable,message="This delegate method is unavailable now. Please use new delegate function `onMessagesRead(receipt : MessageReceipt)`");
 - (void)onMessageEditedWithMessage:(BaseMessage * _Nonnull)message;
@@ -1077,6 +1077,7 @@ SWIFT_CLASS("_TtCC12CometChatPro19ConversationRequest26ConversationRequestBuilde
 - (nonnull instancetype)initWithLimit:(NSInteger)limit OBJC_DESIGNATED_INITIALIZER;
 - (ConversationRequestBuilder * _Nonnull)setWithLimit:(NSInteger)limit SWIFT_WARN_UNUSED_RESULT;
 - (ConversationRequestBuilder * _Nonnull)setConversationTypeWithConversationType:(enum ConversationType)conversationType SWIFT_WARN_UNUSED_RESULT;
+- (ConversationRequestBuilder * _Nonnull)withUserAndGroupTags:(BOOL)withUserAndGroupTags SWIFT_WARN_UNUSED_RESULT;
 - (ConversationRequest * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

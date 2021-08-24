@@ -393,7 +393,7 @@ extension CometChat {
   @objc optional func onCustomMessageReceived(customMessage: CometChatPro.CustomMessage)
   @objc optional func onTypingStarted(_ typingDetails: CometChatPro.TypingIndicator)
   @objc optional func onTypingEnded(_ typingDetails: CometChatPro.TypingIndicator)
-  @objc optional func onTransisentMessage(_ message: CometChatPro.TransientMessage)
+  @objc optional func onTransisentMessageReceived(_ message: CometChatPro.TransientMessage)
   @available(iOS, unavailable, message: "This delegate method is unavailable now. Please use new delegate function `onMessagesDelivered(receipt : MessageReceipt)`")
   @objc optional func onMessageDelivered(receipt: CometChatPro.MessageReceipt)
   @available(iOS, unavailable, message: "This delegate method is unavailable now. Please use new delegate function `onMessagesRead(receipt : MessageReceipt)`")
@@ -742,6 +742,8 @@ extension CometChat {
   @objc public static func leaveGroup(GUID: Swift.String, onSuccess: @escaping (Swift.String) -> (), onError: @escaping (CometChatPro.CometChatException?) -> Swift.Void)
   @objc public static func getJoinedGroups(onSuccess: @escaping ([Swift.String]) -> Swift.Void, onError: @escaping (CometChatPro.CometChatException?) -> Swift.Void)
   @objc public static func transferGroupOwnership(UID: Swift.String, GUID: Swift.String, onSuccess: @escaping (Swift.String) -> (), onError: @escaping (CometChatPro.CometChatException?) -> ())
+  public static func getOnlineUserCount(onSuccess: @escaping (Swift.Int) -> Swift.Void, onError: @escaping (CometChatPro.CometChatException?) -> Swift.Void)
+  public static func getOnlineGroupMemberCount(_ guids: [Swift.String], onSuccess: @escaping ([Swift.String : Any]) -> Swift.Void, onError: @escaping (CometChatPro.CometChatException?) -> Swift.Void)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class User : CometChatPro.AppEntity {
   @objc public var uid: Swift.String? {
@@ -817,6 +819,7 @@ extension CometChat {
     @objc public init(limit: Swift.Int)
     @objc public func set(limit: Swift.Int) -> CometChatPro.ConversationRequest.ConversationRequestBuilder
     @objc public func setConversationType(conversationType: CometChatPro.CometChat.ConversationType) -> CometChatPro.ConversationRequest.ConversationRequestBuilder
+    @objc public func withUserAndGroupTags(_ withUserAndGroupTags: Swift.Bool) -> CometChatPro.ConversationRequest.ConversationRequestBuilder
     @objc public func build() -> CometChatPro.ConversationRequest
     @objc override dynamic public init()
     @objc deinit
