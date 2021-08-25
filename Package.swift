@@ -11,8 +11,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "CometChat",
-            targets: ["CometChat"]),
+            name: "CometChatPro",
+            targets: ["CometChatPro"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,7 +24,7 @@ let package = Package(
 //        .binaryTarget(name: "CometChatPro", path: "./Sources/CometChatPro.xcframework"),
 //        .binaryTarget(name: "Starscream", path: "./Sources/Starscream.xcframework")
         .binaryTarget(
-            name: "CometChat",
+            name: "CometChatPro",
             url: "https://library.cometchat.io/ios/v2.0/xcode12/CometChatPro.xcframework_3.zip",
             checksum: "7e3ea69f82721c844c261794b58ab8f1839392d38671c673202192bc35a6a307"
 //            0169d1cebbb98f5170016d4034f5b85f656f3efc7779ea476f6caa103398304d"
