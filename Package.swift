@@ -75,6 +75,6 @@ let package = Package(
 //        .library(name: "CometChatPro", targets: ["CometChatPro"])
 //    ],
     targets: [
-        .target(name: "CometChatPro", sources: ["CometChatPro.xcframework"])
+        .binaryTarget(name: "CometChatPro", path: "Sources/CometChatPro/CometChatPro.xcframework")
     ]
 )
