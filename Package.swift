@@ -72,7 +72,7 @@ let package = Package(
         .iOS(.v11)
     ],
     products: [
-        .library(name: "CometChatPro", targets: ["CometChatPro"])
+        .library(name: "CometChatPro", targets: ["CometChatPro","Starscream"])
     ],
     targets: [
         .binaryTarget(
@@ -81,6 +81,10 @@ let package = Package(
             checksum: "7e3ea69f82721c844c261794b58ab8f1839392d38671c673202192bc35a6a307"
             //            0169d1cebbb98f5170016d4034f5b85f656f3efc7779ea476f6caa103398304d"
             
-        )
+        ),
+        .binaryTarget(
+            name: "Starscream",
+            url: "https://library.cometchat.io/ios/v2.0/xcode12/Starscream.xcframework_1.zip",
+            checksum: "b0e9a80270f0e03d824e168620f0bd4c4f2aebd9050aa5c3ff724ceb86b950ba")
     ]
 )
