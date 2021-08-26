@@ -43,30 +43,38 @@ import PackageDescription
 //                      checksum: "b0e9a80270f0e03d824e168620f0bd4c4f2aebd9050aa5c3ff724ceb86b950ba")
 //   ]
 //)
+//
+//let package = Package(
+//    name: "CometChatPro",
+//    platforms: [
+//        .iOS(.v11),
+//    ],
+//    products: [
+//        .library(
+//            name: "CometChatPro",
+//            targets: ["CometChatPro"]
+//        ),
+//    ],
+//    dependencies: [],
+//    targets: [
+//        .binaryTarget(
+//            name: "CometChatPro",
+//            url: "https://github.com/abhisheksaralaya/CCCometChatPro/blob/master/CometChatPro.xcframework.zip",
+//            checksum: "aa7eac669c72c18e19f706339062eeeead036f082a7a4fb862c275b7869b70b1"
+//        ),
+//    ]
+//)
 
 let package = Package(
     name: "CometChatPro",
     platforms: [
-        .iOS(.v11),
+        // Only add support for iOS 11 and up.
+        .iOS(.v11)
     ],
     products: [
-        .library(
-            name: "CometChatPro",
-            targets: ["CometChatPro"]
-        ),
+        .library(name: "CometChatPro", targets: ["CometChatPro"])
     ],
-    dependencies: [],
     targets: [
-        .binaryTarget(
-            name: "CometChatPro",
-            url: "https://github.com/abhisheksaralaya/CCCometChatPro/blob/master/CometChatPro.xcframework.zip",
-            checksum: "a209fe93bdfa6926441628f629c84a6a85372960318951215d80fa2d370c5973"
-        ),
+        .target(name: "CometChatPro", sources: ["CometChatPro.xcframework"])
     ]
 )
-
-
-
-//Showing All Messages
-//checksum of downloaded artifact of binary target 'CometChatPro' (a209fe93bdfa6926441628f629c84a6a85372960318951215d80fa2d370c5973) does not match checksum specified by the manifest (aa7eac669c72c18e19f706339062eeeead036f082a7a4fb862c275b7869b70b1)
-
