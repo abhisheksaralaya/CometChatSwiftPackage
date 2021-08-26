@@ -71,9 +71,9 @@ let package = Package(
         // Only add support for iOS 11 and up.
         .iOS(.v11)
     ],
-//    products: [
-//        .library(name: "CometChatPro", targets: ["CometChatPro"])
-//    ],
+    products: [
+        .library(name: "CometChatPro", targets: ["CometChatPro"])
+    ],
     targets: [
         .binaryTarget(
             name: "CometChatPro",
