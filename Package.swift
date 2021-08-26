@@ -60,7 +60,13 @@ let package = Package(
         .binaryTarget(
             name: "CometChatPro",
             url: "https://github.com/abhisheksaralaya/CCCometChatPro/blob/master/CometChatPro.xcframework.zip",
-            checksum: "aa7eac669c72c18e19f706339062eeeead036f082a7a4fb862c275b7869b70b1"
+            checksum: "a209fe93bdfa6926441628f629c84a6a85372960318951215d80fa2d370c5973"
         ),
     ]
 )
+
+
+
+//Showing All Messages
+//checksum of downloaded artifact of binary target 'CometChatPro' (a209fe93bdfa6926441628f629c84a6a85372960318951215d80fa2d370c5973) does not match checksum specified by the manifest (aa7eac669c72c18e19f706339062eeeead036f082a7a4fb862c275b7869b70b1)
+
